@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("./style") %>
+    <title>Sign up</title>
+</head>
+<body>
+    <%- include("./messages") %>
+    <div class="container">
+        <h1>Sign up</h1>
+        <form action="/user/signup" method="post">
+            <input type="text" name="username" id="username" placeholder="Username" value="<%= typeof username != 'undefined' ? username : '' %>" required>
+            <input type="email" name="email" id="email" placeholder="Email" value="<%= typeof email != 'undefined' ? email : '' %>" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" required>
+            <input type="submit" value="Sign up" id="signup" class="button">
+            <label for="">Already have an account? <a href="/user/login">Login</a></label>
+        </form>
+    </div>
+</body>
+</html>

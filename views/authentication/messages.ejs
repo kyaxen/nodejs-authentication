@@ -1,0 +1,30 @@
+<% if(locals.errors){ %> <% errors.forEach(function(error) { %>
+    <div class="message-container">
+        <p><%= error.msg %> </p>
+        <button id="close">-</button>
+    </div>
+<% }); %> <% } %> <% if(success_msg != ''){ %>
+    <div class="message-container">
+        <p><%= success_msg %> </p>
+        <button id="close">-</button>
+    </div>
+<% } %> <% if(error_msg != ''){ %>
+    <div class="message-container">
+        <p><%= error_msg %> </p>
+        <button id="close">-</button>
+    </div>
+<% } %> <% if(error != ''){ %>
+    <div class="message-container">
+        <p><%= error %> </p>
+        <button id="close">-</button>
+    </div>
+<% } %>
+
+<script>
+    const btn = document.getElementById('close');
+    const messageContainer = document.querySelector('.message-container');
+
+    btn.addEventListener('click', () => {
+        messageContainer.remove();
+    });
+</script>
